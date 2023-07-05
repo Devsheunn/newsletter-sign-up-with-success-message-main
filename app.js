@@ -31,32 +31,28 @@ const reset = () => {
 //funtion to validate email
 function validate() {
   let reg = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+).([a-z]+)(.[a-z]+)$/;
-  if (input.value === "") {
-    reset();
-  } else {
-    if (!input.value.match(reg)) {
-      errorMessage.innerHTML = "Valid email required";
-      errorMessage.style.color = "red";
-      input.style.border = "1px solid rgb(255, 0, 0, 0.7)";
-      input.style.backgroundColor = "rgb(255, 192, 203, 0.3)";
-      input.style.color = "red";
+  if (!input.value.match(reg)) {
+    errorMessage.innerHTML = "Valid email required";
+    errorMessage.style.color = "red";
+    input.style.border = "1px solid rgb(255, 0, 0, 0.7)";
+    input.style.backgroundColor = "rgb(255, 192, 203, 0.3)";
+    input.style.color = "red";
 
-      //confirmation
-      confirmation.innerHTML = ` A confirmation email has been sent to
+    //confirmation
+    confirmation.innerHTML = ` A confirmation email has been sent to
       <strong>${input.value}</strong> Please open it and click the
       button inside to confirm your subscription.`;
 
-      return false;
-    }
-
-    errorMessage.innerHTML = "";
-    input.style.backgroundColor = "white";
-    input.style.border = " 1px solid green";
-    input.style.color = "hsl(234, 29%, 20%)";
-
-    submitBtn.addEventListener("click", success);
-    return true;
+    return false;
   }
+
+  errorMessage.innerHTML = "";
+  input.style.backgroundColor = "white";
+  input.style.border = " 1px solid green";
+  input.style.color = "hsl(234, 29%, 20%)";
+
+  submitBtn.addEventListener("click", success);
+  return true;
 }
 
 //dismiss button to reset
