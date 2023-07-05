@@ -37,12 +37,6 @@ function validate() {
     input.style.border = "1px solid rgb(255, 0, 0, 0.7)";
     input.style.backgroundColor = "rgb(255, 192, 203, 0.3)";
     input.style.color = "red";
-
-    //confirmation
-    confirmation.innerHTML = ` A confirmation email has been sent to
-      <strong>${input.value}</strong> Please open it and click the
-      button inside to confirm your subscription.`;
-
     return false;
   }
 
@@ -51,6 +45,10 @@ function validate() {
   input.style.border = " 1px solid green";
   input.style.color = "hsl(234, 29%, 20%)";
 
+  //confirmation
+  confirmation.innerHTML = ` A confirmation email has been sent to
+     <strong>${input.value}</strong> Please open it and click the
+     button inside to confirm your subscription.`;
   submitBtn.addEventListener("click", success);
   return true;
 }
