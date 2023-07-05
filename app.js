@@ -32,6 +32,7 @@ const reset = () => {
 function validate() {
   let reg = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+).([a-z]+)(.[a-z]+)$/;
   if (!input.value.match(reg)) {
+    submitBtn.removeEventListener("click", success);
     errorMessage.innerHTML = "Valid email required";
     errorMessage.style.color = "red";
     input.style.border = "1px solid rgb(255, 0, 0, 0.7)";
