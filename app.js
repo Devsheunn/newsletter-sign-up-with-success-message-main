@@ -4,7 +4,7 @@ let submitBtn = document.querySelector(".submit");
 let mainPage = document.querySelector(".mainpage");
 let successCard = document.querySelector(".success_card");
 let dismissBtn = document.querySelector(".dismiss");
-let allbtn = document.querySelector(".btn");
+let confirmation = document.querySelector(".confirmation");
 
 //sucess message
 const success = () => {
@@ -28,14 +28,6 @@ const reset = () => {
   submitBtn.removeEventListener("click", success);
 };
 
-//link Enter key to submit button
-input.addEventListener("keyup", (e) => {
-  e.preventDefault();
-  if (e.key === "Enter") {
-    dismissBtn.click();
-  }
-});
-
 //funtion to validate email
 function validate() {
   let reg = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+).([a-z]+)(.[a-z]+)$/;
@@ -48,6 +40,12 @@ function validate() {
       input.style.border = "1px solid rgb(255, 0, 0, 0.7)";
       input.style.backgroundColor = "rgb(255, 192, 203, 0.3)";
       input.style.color = "red";
+
+      //confirmation
+      confirmation.innerHTML = ` A confirmation email has been sent to
+      <strong>${input.value}</strong> Please open it and click the
+      button inside to confirm your subscription.`;
+
       return false;
     }
 
@@ -55,9 +53,11 @@ function validate() {
     input.style.backgroundColor = "white";
     input.style.border = " 1px solid green";
     input.style.color = "hsl(234, 29%, 20%)";
+
     submitBtn.addEventListener("click", success);
     return true;
   }
 }
 
+//dismiss button to reset
 dismissBtn.addEventListener("click", reset);
