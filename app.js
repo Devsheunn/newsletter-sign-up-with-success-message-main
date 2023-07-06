@@ -51,7 +51,6 @@ function validate() {
      <strong>${input.value}</strong> Please open it and click the
      button inside to confirm your subscription.`;
   submitBtn.addEventListener("click", success);
-  return true;
 }
 
 //dismiss button to reset
