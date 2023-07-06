@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [SOLUTION](https://github.com/Devsheunn/newsletter-sign-up-with-success-message-main)
-- Live Site URL: [LIVE SITE](https://transcendent-florentine-1c8d84.netlify.app/)
+- Live Site URL: [LIVE SITE](https://news-letter-sign-up.netlify.app/?#)
 
 ## My process
 
