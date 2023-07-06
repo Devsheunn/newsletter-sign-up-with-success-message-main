@@ -188,6 +188,10 @@ button:is(:hover, :focus) {
   text-align: center;
 }
 
+.attribution a {
+  color: var(--Dark_Slate_Grey);
+}
+
 /* sucess card */
 
 .success_card {
